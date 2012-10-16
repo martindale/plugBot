@@ -73,17 +73,28 @@ page.onLoadFinished = function(status) {
               case '/afk':
                 API.sendChat('If you\'re afk at the end of your song for longer than 30 minutes you get warning 1. One minute later you get warning 2, another minute last warning, 30 seconds [boot].');
               break;
+              case '/afpdj':
               case '/aftt':
-                API.sendChat('AFTT is just as bad as AFK. DJ\'s must pay attention to chat, if you cannot do that then don\'t DJ during prime time. The purpose of these rules is so that active users who can pay attention to chat at their employer\'s expense can sit up on the decks.');
+                API.sendChat('-AFTT- AFPDJ is just as bad as AFK. DJ\'s must pay attention to chat, if you cannot do that then don\'t DJ during prime time. The purpose of these rules is so that active users who can pay attention to chat at their employer\'s expense can sit up on the decks.');
+              break;
+              case '/count':
+                API.sendChat('There are ' + API.getUsers().length + ' users.');
               break;
               case '/djs':
-                API.sendChat(API.getDJs.map(function(dj) {
+                var DJs = API.getDJs();
+                API.sendChat(DJs.map(function(dj) {
                   return dj.username;
                 }).join(', '));
               break;
-              case '/dummy':
-                //API.sendChat('');
+              case 'mj':
+                API.sendChat('As usual, everything is Mad Joker\'s fault.');
               break;
+              /* case '/aww':
+              
+              break;
+              case '/dummy':
+                API.sendChat('');
+              break; */
               
             }
           });
