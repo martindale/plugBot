@@ -63,6 +63,28 @@ page.onLoadFinished = function(status) {
               case '/bitch':
                 API.sendChat('Not a lot of things are against the rules, but bitching about the music is. Stop being a bitch.');
               break;
+              case '/music':
+                // TODO: implement times of day, a la @chrisinajar
+                API.sendChat('Evening! Most people are out of work so things are a lot more fluid and much less harsh. Seats are easy to get, spin a few if you want but don\'t hog the decks!');
+              break;
+              case '/rules':
+                API.sendChat('No song limits, no queues, no auto-dj. Pure FFA. DJ\'s over 10 minutes idle (measured by chat) face the [boot]. See /music for music suggestions, though there are no defined or enforced rules on music. More: http://goo.gl/b7UGO');
+              break;
+              case '/afk':
+                API.sendChat('If you\'re afk at the end of your song for longer than 30 minutes you get warning 1. One minute later you get warning 2, another minute last warning, 30 seconds [boot].');
+              break;
+              case '/aftt':
+                API.sendChat('AFTT is just as bad as AFK. DJ\'s must pay attention to chat, if you cannot do that then don\'t DJ during prime time. The purpose of these rules is so that active users who can pay attention to chat at their employer\'s expense can sit up on the decks.');
+              break;
+              case '/djs':
+                API.sendChat(API.getDJs.map(function(dj) {
+                  return dj.username;
+                }).join(', '));
+              break;
+              case '/dummy':
+                //API.sendChat('');
+              break;
+              
             }
           });
         }
