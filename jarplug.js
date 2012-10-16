@@ -60,6 +60,10 @@ page.onLoadFinished = function(status) {
               case 'herp':
                 API.sendChat('https://gist.github.com/3896543');
               break;
+              case '/awesome':
+                $('#button-vote-positive').click();
+                API.sendChat('smiff, upvote.');
+              break;
               case '/bitch':
                 API.sendChat('Not a lot of things are against the rules, but bitching about the music is. Stop being a bitch.');
               break;
